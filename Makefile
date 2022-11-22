@@ -1,0 +1,28 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/16 17:48:50 by hdagdagu          #+#    #+#              #
+#    Updated: 2022/11/21 17:12:09 by hdagdagu         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+cc = gcc
+SRC = so_long.c get_array.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c showimage.c check.c so_long_utils.c ft_printf/ft_printf.c  ft_printf/ft_putchar.c ft_printf/ft_putstr.c ft_printf/ft_putnbr.c
+BONUSSRC = so_long_bonus.c get_array.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c showimage_bonus.c check.c so_long_utils.c ft_animation.c ft_printf/ft_printf.c  ft_printf/ft_putchar.c ft_printf/ft_putstr.c ft_printf/ft_putnbr.c  
+
+NAME = a.out
+OBJ = $(SRC:.c=.o)
+
+Flags = -Wall -Wextra -Werror
+
+
+$(NAME): 
+	@$(CC) $(SRC) $(Flags) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME) 
+bonus :	
+	@$(CC) $(BONUSSRC) $(Flags) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME) 
+fclean :
+	@rm -rf $(OBJ) $(NAME) 
