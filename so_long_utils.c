@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:11:45 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/11/19 12:58:07 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/11/22 15:37:08 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_itoa(int n)
 
 	nb = n;
 	len = ft_counte(nb);
-	dst = malloc(len +1);
+	dst = malloc(len + 1);
 	if (!dst)
 		return (0);
 	if (nb < 0)
@@ -63,9 +63,8 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 	if (s[i] == (unsigned char)c)
 	{
-        printf("\n ---------------------------- \n | 😭 I can't find the path | \n ---------------------------- \n");
+		ft_printf("\n | 😭 I can't find the path | \n");
 		exit(0);
-
 	}
 	return (0);
 }
