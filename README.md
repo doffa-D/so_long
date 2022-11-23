@@ -51,7 +51,7 @@ to start the game:
 | <kbd>ESC</kbd>| close the game |
 ---
 
-# Exemple foor map:
+# Exemple for map:
 
 ```
 111111111111111111
