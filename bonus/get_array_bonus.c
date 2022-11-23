@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_array.c                                        :+:      :+:    :+:   */
+/*   get_array_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 20:03:57 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/11/23 13:14:55 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/11/23 15:15:23 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	check_dor_and_player(int e, int p, int c)
 {
@@ -88,7 +88,7 @@ void	find_error(t_data *img)
 	}
 }
 
-char	**get_array(t_data *img)
+char	**get_array_bonus(t_data *img)
 {
 	int		e;
 	int		i;
@@ -113,6 +113,6 @@ char	**get_array(t_data *img)
 		if (map[z][i] != '1' && map[z][i] != '\n')
 			exit(0);
 	find_p_e_c(img, e);
-	check();
+	check_bonus();
 	return (map);
 }

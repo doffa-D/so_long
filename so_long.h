@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:31:21 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/11/22 18:38:51 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/11/23 15:16:35 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ typedef struct s_data
 }	t_data;
 
 int		ft_strlen(char *str);
-int		showimagebonus(t_data *img);
 int		showimage(t_data *img);
 
 char	*ft_strdup(char *str);
@@ -95,6 +94,8 @@ char	*ft_strjoin(char *s1, char *s2);
 int		ft_animation(t_data *img);
 int		key_hook(int keycode, t_data *img);
 void	mvplayer(t_data *img, int keycode);
+int		**check_bonus(void);
+char	**get_array_bonus(t_data *img);
 
 // get_next_line
 char	*get_next_line(int fd);

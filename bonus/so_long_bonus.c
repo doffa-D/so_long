@@ -6,11 +6,11 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:57:14 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/11/22 15:33:14 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/11/23 15:15:33 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	coin(t_data *img)
 {
@@ -70,7 +70,7 @@ int	main(void)
 {
 	t_data	img;
 
-	get_array(&img);
+	get_array_bonus(&img);
 	img.mlx = mlx_init();
 	img.win = mlx_new_window(img.mlx, 50 * img.map.linesize,
 			50 * img.map.xsize, "./so_long");

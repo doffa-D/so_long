@@ -6,11 +6,11 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 14:01:43 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/11/22 15:50:21 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/11/23 15:15:19 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	enemy(t_data *img, int i, int z)
 {

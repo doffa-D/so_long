@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   check_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:58:20 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/11/23 14:50:01 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/11/23 15:15:16 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	replace(int z, int p, int i, char **map)
 {
@@ -86,7 +86,8 @@ void	find_c_e(char **map)
 		while (map[z][i])
 		{
 			if (map[z][i] != '0' && map[z][i] != '1' && map[z][i] != 'P'
-				&& map[z][i] != 'E' && map[z][i] != 'C' && map[z][i] != '\n')
+				&& map[z][i] != 'E' && map[z][i] != 'C'
+					&& map[z][i] != 'Z' && map[z][i] != '\n')
 				exit(0);
 			i++;
 		}
@@ -94,7 +95,7 @@ void	find_c_e(char **map)
 	}
 }
 
-char	**check(void)
+int	**check_bonus(void)
 {
 	int		z;
 	int		fd;
@@ -113,5 +114,5 @@ char	**check(void)
 	map[z - 1] = ft_strjoin(map[z - 1], "\n\0");
 	find_c_e(map);
 	free(map);
-	return (map);
+	return (0);
 }
