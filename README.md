@@ -26,6 +26,8 @@ To play this game you can use any map of your choice as long follow the followin
 |     *Z*     | Enemy starting position  |
 
 
+# Example if you die
+
 ![dead](https://user-images.githubusercontent.com/54211553/203583384-f59673dd-bb5d-44db-897b-4047d1d9f847.gif)
 
 To compile the project, run the following command:
@@ -51,6 +53,14 @@ to start the game:
 | <kbd>ESC</kbd>| close the game |
 ---
 
+### Map File
+You can create your own map file as you like but need to follow these rules.
+- map is covered with walls
+- map is contained with 1 item, 1 player and 1 exit door.
+- The map must be rectangular
+- map file name need end with `.ber`
+- place map file in `maps` directory
+
 # Exemple for map:
 
 ```
@@ -61,3 +71,14 @@ to start the game:
 1000C00E000C000001
 111111111111111111
 ```
+## Resources
+- [MiniLibX]
+- [MiniLibX Document]
+- [MiniLibX Tutorial]
+- [MiniLibX Example]
+
+
+[MiniLibX]: https://github.com/42Paris/minilibx-linux
+[MiniLibX Document]: https://harm-smits.github.io/42docs/libs/minilibx/introduction.html
+[MiniLibX Tutorial]: https://aurelienbrabant.fr/blog/pixel-drawing-with-the-minilibx
+[MiniLibX Example]: https://github.com/terry-yes/mlx_example
