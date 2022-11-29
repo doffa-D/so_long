@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:57:14 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/11/23 15:15:33 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/11/29 13:04:42 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int	main(void)
 	showimage(&img);
 	img.wall.y = 2;
 	mlx_hook(img.win, 2, 1L << 0, key_hook, &img);
+	mlx_hook(img.win, 17, 1L << 0, ft_close, &img);
 	mlx_loop_hook(img.mlx, ft_animation, &img);
 	mlx_loop(img.mlx);
 }
