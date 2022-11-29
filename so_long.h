@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:31:21 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/11/23 15:16:35 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/11/29 13:12:00 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ int		key_hook(int keycode, t_data *img);
 void	mvplayer(t_data *img, int keycode);
 int		**check_bonus(void);
 char	**get_array_bonus(t_data *img);
+int		ft_close(void);
 
 // get_next_line
 char	*get_next_line(int fd);
