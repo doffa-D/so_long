@@ -6,7 +6,7 @@
 #    By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 17:48:50 by hdagdagu          #+#    #+#              #
-#    Updated: 2022/11/23 15:16:06 by hdagdagu         ###   ########.fr        #
+#    Updated: 2022/11/29 13:04:14 by hdagdagu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRC = 	so_long.c \
 		ft_printf/ft_putnbr.c \
 		key_hook.c \
 		mvplayer.c \
+		ft_close.c \
 
 BONUSSRC = 	bonus/so_long_bonus.c \
 			bonus/get_array_bonus.c \
@@ -40,6 +41,7 @@ BONUSSRC = 	bonus/so_long_bonus.c \
 			key_hook.c \
 			mvplayer.c \
 			showimage.c \
+			ft_close.c \
 
 NAME = so_long
 OBJ = $(SRC:.c=.o)
