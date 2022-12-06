@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:55:37 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/05 19:11:38 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/06 09:59:59 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,6 @@ int	key_hook(int keycode, t_data *img)
 		while (i < 17)
 			free(img->map.map[i++]);
 		free(img->map.map);
-		while(1);
 		exit(0);
 	}
 	k = win(img, keycode);

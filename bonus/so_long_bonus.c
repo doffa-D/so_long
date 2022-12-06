@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:57:14 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/05 19:40:49 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/06 10:04:09 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,15 @@ void	put_image(t_data *img)
 	coin(img);
 }
 
-int	main(int argc,char **argv)
+int	main(int argc, char **argv)
 {
 	t_data	img;
 
-	if(argc == 2)
+	if (argc == 2)
 	{
-		if(!(ft_strnstr(argv[1],".ber",ft_strlen(argv[1]))))
+		if (!(ft_strnstr(argv[1], ".ber", ft_strlen(argv[1]))))
 			exit(0);
-		get_array_bonus(&img,argv[1]);
+		get_array_bonus(&img, argv[1]);
 		img.mlx = mlx_init();
 		img.win = mlx_new_window(img.mlx, 50 * img.map.linesize,
 				50 * img.map.xsize, "./so_long");
@@ -87,4 +87,6 @@ int	main(int argc,char **argv)
 		mlx_loop_hook(img.mlx, ft_animation, &img);
 		mlx_loop(img.mlx);
 	}
+	else
+		exit (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:31:21 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/05 19:40:27 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/06 10:02:33 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int		ft_strlen(char *str);
 int		showimage(t_data *img);
 
 char	*ft_strdup(char *str);
-char	**get_array(t_data *img,char *argv);
+char	**get_array(t_data *img, char *argv);
 char	*ft_itoa(int n);
 char	**check(void);
 char	*ft_strchr(const char *s, int c);
@@ -94,7 +94,7 @@ int		ft_animation(t_data *img);
 int		key_hook(int keycode, t_data *img);
 void	mvplayer(t_data *img, int keycode);
 int		**check_bonus(void);
-void	get_array_bonus(t_data *img,char *argv);
+void	get_array_bonus(t_data *img, char *argv);
 int		ft_close(void);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 

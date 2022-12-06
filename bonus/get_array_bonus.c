@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 20:03:57 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/05 19:24:03 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/06 10:03:16 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	find_error(t_data *img)
 	}
 }
 
-void	get_array_bonus(t_data *img,char *argv)
+void	get_array_bonus(t_data *img, char *argv)
 {
 	int		e;
 	int		i;
