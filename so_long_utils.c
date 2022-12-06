@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:11:45 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/11/22 15:37:08 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/05 19:30:05 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,9 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 	if (s[i] == (unsigned char)c)
 	{
-		ft_printf("\n | 😭 I can't find the path | \n");
+		ft_printf("   -------------------------");
+		ft_printf("\n | 😭 I can't find the path |\n");
+		ft_printf("  -------------------------\n");
 		exit(0);
 	}
 	return (0);
@@ -95,4 +97,30 @@ char	*ft_strjoin(char *s1, char *s2)
 	}
 	b[i] = '\0';
 	return (b);
+}
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t	h;
+	size_t	n;
+
+	h = 0;
+	if (needle[0] == '\0')
+		return ((char *)haystack);
+	if (len == 0)
+		return (0);
+	while (haystack[h] != '\0')
+	{
+		n = 0;
+		while (haystack[h + n] == needle[n] && (h + n) < len)
+		{
+			if (haystack[h + n] == '\0' && needle[n] == '\0')
+				return ((char *)&haystack[h]);
+			n++;
+		}
+		if (needle[n] == '\0')
+			return ((char *)haystack + h);
+		h++;
+	}
+	return (0);
 }

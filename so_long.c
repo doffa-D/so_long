@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:55:37 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/11/29 13:02:59 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/05 19:42:03 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,24 @@ void	put_image(t_data *img)
 			&img->wallcoin.img_width, &img->wallcoin.img_height);
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	t_data	img;
-
-	get_array(&img);
-	img.mlx = mlx_init();
-	img.win = mlx_new_window(img.mlx, 50 * img.map.linesize,
-			50 * img.map.xsize, "./so_long");
-	img.img = mlx_new_image(img.mlx, img.map.linesize, img.map.xsize);
-	put_image(&img);
-	img.wall.y = 1;
-	showimage(&img);
-	mlx_hook(img.win, 2, 1L << 0, key_hook, &img);
-	mlx_hook(img.win, 17, 1L << 0, ft_close, &img);
-	mlx_loop(img.mlx);
+	if(argc == 2)
+	{
+		if(!(ft_strnstr(argv[1],".ber",ft_strlen(argv[1]))))
+			exit(0);
+		get_array(&img,argv[1]);
+		img.mlx = mlx_init();
+		img.win = mlx_new_window(img.mlx, 50 * img.map.linesize,
+				50 * img.map.xsize, "./so_long");
+		img.img = mlx_new_image(img.mlx, img.map.linesize, img.map.xsize);
+		put_image(&img);
+		img.wall.y = 1;
+		showimage(&img);
+		mlx_hook(img.win, 2, 1L << 0, key_hook, &img);
+		mlx_hook(img.win, 17, 1L << 0, ft_close, &img);
+		mlx_loop(img.mlx);
+	}
+	return 0;
 }
