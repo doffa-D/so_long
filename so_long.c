@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:55:37 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/05 19:42:03 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/06 10:01:40 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ void	put_image(t_data *img)
 int	main(int argc, char **argv)
 {
 	t_data	img;
-	if(argc == 2)
+
+	if (argc == 2)
 	{
-		if(!(ft_strnstr(argv[1],".ber",ft_strlen(argv[1]))))
+		if (!(ft_strnstr(argv[1], ".ber", ft_strlen(argv[1]))))
 			exit(0);
-		get_array(&img,argv[1]);
+		get_array(&img, argv[1]);
 		img.mlx = mlx_init();
 		img.win = mlx_new_window(img.mlx, 50 * img.map.linesize,
 				50 * img.map.xsize, "./so_long");
@@ -51,5 +52,6 @@ int	main(int argc, char **argv)
 		mlx_hook(img.win, 17, 1L << 0, ft_close, &img);
 		mlx_loop(img.mlx);
 	}
-	return 0;
+	else
+		exit (0);
 }
