@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 20:03:57 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/04 14:25:21 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/05 19:22:00 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	find_error(t_data *img)
 	}
 }
 
-char	**get_array(t_data *img)
+char	**get_array(t_data *img,char *argv)
 {
 	int		e;
 	int		i;
@@ -99,7 +99,7 @@ char	**get_array(t_data *img)
 	e = 0;
 	i = 0;
 	z = 0;
-	fd = open("map.ber", O_RDWR);
+	fd = open(argv, O_RDWR);
 	map = malloc(1000);
 	map[z] = get_next_line(fd);
 	while (map[z])

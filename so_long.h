@@ -6,13 +6,12 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:31:21 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/04 12:36:46 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/05 19:40:27 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #	ifndef SO_LONG_H
 # define SO_LONG_H
-
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
@@ -86,7 +85,7 @@ int		ft_strlen(char *str);
 int		showimage(t_data *img);
 
 char	*ft_strdup(char *str);
-char	**get_array(t_data *img);
+char	**get_array(t_data *img,char *argv);
 char	*ft_itoa(int n);
 char	**check(void);
 char	*ft_strchr(const char *s, int c);
@@ -95,8 +94,9 @@ int		ft_animation(t_data *img);
 int		key_hook(int keycode, t_data *img);
 void	mvplayer(t_data *img, int keycode);
 int		**check_bonus(void);
-char	**get_array_bonus(t_data *img);
+void	get_array_bonus(t_data *img,char *argv);
 int		ft_close(void);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 // get_next_line
 char	*get_next_line(int fd);

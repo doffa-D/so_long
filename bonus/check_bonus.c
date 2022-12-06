@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:58:20 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/11/23 15:15:16 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/05 18:58:51 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,9 @@ int	**check_bonus(void)
 	path_finder(map);
 	map[z - 1] = ft_strjoin(map[z - 1], "\n\0");
 	find_c_e(map);
+	z = 0;
+	while (map[z])
+		free(map[z++]);
 	free(map);
 	return (0);
 }

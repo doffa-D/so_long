@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:29:39 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/11/22 15:21:06 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/05 16:16:19 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,31 @@ int	showpng(t_data *img, int i, int z, int x)
 	return (x);
 }
 
+char	*print_2(char *str, int num)
+{
+	char	*str2;
+	char	*jo;
+
+	str2 = ft_itoa(num);
+	jo = ft_strjoin(str, str2);
+	free(str2);
+	return (jo);
+}
+
 void	put(t_data *img, int x)
 {
+	char	*str;
+
 	mlx_put_image_to_window(img->mlx, img->win, img->wallcoin.img,
 		(50 * img->map.linesize) - 150, 0);
 	mlx_put_image_to_window(img->mlx, img->win, img->wallcoin.img,
 		(50 * img->map.linesize) - 250, 0);
 	mlx_string_put(img->mlx, img->win, (50 * img->map.linesize) - 120,
 		30, 0x007A07D2, "PM:0");
+	str = print_2("Coins:", x);
 	mlx_string_put(img->mlx, img->win, (50 * img->map.linesize) - 240,
-		30, 0x007A07D2, ft_strjoin("Coins:", ft_itoa(x)));
+		30, 0x007A07D2, str);
+	free(str);
 }
 
 int	showimage(t_data *img)

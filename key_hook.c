@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:55:37 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/11/22 19:47:54 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/05 19:11:38 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,45 @@
 
 void	putcheck(int z, int i, t_data *img)
 {
-	if (img->map.map[z][i] == '1')
-		mlx_put_image_to_window(img->mlx, img->win,
-			img->wall.img, i * 50, z * 50);
-	if (img->map.map[z][i] == 'E' && img->coin1.i != 0)
-		mlx_put_image_to_window(img->mlx, img->win,
-			img->dorclose.img, i * 50, z * 50);
-	if (img->map.map[z][i] == 'E' && img->coin1.i == 0)
-		mlx_put_image_to_window(img->mlx, img->win, img->dor.img,
-			img->dor.locali * 50, img->dor.localz * 50);
-	if (img->map.map[z][i] == 'C')
-		mlx_put_image_to_window(img->mlx, img->win,
-			img->coin1.img, i * 50, z * 50);
-}
-
-void	makephototowin(t_data *img, int z, int i, int k)
-{
 	while (z < img->map.xsize)
 	{
 		i = 0;
 		while (i < img->map.linesize)
 		{
-			putcheck(z, i, img);
+			if (img->map.map[z][i] == '1')
+				mlx_put_image_to_window(img->mlx, img->win,
+					img->wall.img, i * 50, z * 50);
+			if (img->map.map[z][i] == 'E' && img->coin1.i != 0)
+				mlx_put_image_to_window(img->mlx, img->win,
+					img->dorclose.img, i * 50, z * 50);
+			if (img->map.map[z][i] == 'E' && img->coin1.i == 0)
+				mlx_put_image_to_window(img->mlx, img->win, img->dor.img,
+					img->dor.locali * 50, img->dor.localz * 50);
+			if (img->map.map[z][i] == 'C')
+				mlx_put_image_to_window(img->mlx, img->win,
+					img->coin1.img, i * 50, z * 50);
 			i++;
 		}
 		z++;
 	}
+}
+
+char	*print(char *str, int num)
+{
+	char	*str2;
+	char	*jo;
+
+	str2 = ft_itoa(num);
+	jo = ft_strjoin(str, str2);
+	free(str2);
+	return (jo);
+}
+
+void	makephototowin(t_data *img, int k)
+{
+	char	*str;
+
+	putcheck(0, 0, img);
 	if (img->mob.is == 1)
 		mlx_put_image_to_window(img->mlx, img->win, img->mob.img,
 			img->mob.locali, img->mob.localz);
@@ -50,10 +63,14 @@ void	makephototowin(t_data *img, int z, int i, int k)
 		(50 * img->map.linesize) - 150, 0);
 	mlx_put_image_to_window(img->mlx, img->win, img->wallcoin.img,
 		(50 * img->map.linesize) - 250, 0);
+	str = print("PM:", k);
 	mlx_string_put(img->mlx, img->win, (50 * img->map.linesize) - 120,
-		30, 0x007A07D2, ft_strjoin("PM:", ft_itoa(k)));
+		30, 0x007A07D2, str);
+	free(str);
+	str = print("Coins:", img->coin1.i);
 	mlx_string_put(img->mlx, img->win, (50 * img->map.linesize) - 240,
-		30, 0x007A07D2, ft_strjoin("Coins:", ft_itoa(img->coin1.i)));
+		30, 0x007A07D2, str);
+	free(str);
 }
 
 int	win(t_data *img, int keycode)
@@ -86,20 +103,21 @@ int	win(t_data *img, int keycode)
 int	key_hook(int keycode, t_data *img)
 {
 	int			i;
-	int			z;
 	static int	k;
 
-	k = 0;
 	i = 0;
-	z = 0;
+	k = 0;
 	mlx_put_image_to_window(img->mlx, img->win, img->back.img, 0, 0);
 	if (keycode == 53)
 	{
 		mlx_destroy_window(img->mlx, img->win);
+		while (i < 17)
+			free(img->map.map[i++]);
 		free(img->map.map);
+		while(1);
 		exit(0);
 	}
 	k = win(img, keycode);
-	makephototowin(img, z, i, k);
+	makephototowin(img, k);
 	return (0);
 }
