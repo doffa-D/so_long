@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:55:37 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/06 09:59:59 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/16 22:07:21 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,16 +97,14 @@ int	win(t_data *img, int keycode)
 	else
 		mlx_put_image_to_window(img->mlx, img->win, img->craves.img,
 			img->mob.x, img->mob.y);
-	return (k);
+	return (0);
 }
 
 int	key_hook(int keycode, t_data *img)
 {
 	int			i;
-	static int	k;
 
 	i = 0;
-	k = 0;
 	mlx_put_image_to_window(img->mlx, img->win, img->back.img, 0, 0);
 	if (keycode == 53)
 	{
@@ -116,7 +114,7 @@ int	key_hook(int keycode, t_data *img)
 		free(img->map.map);
 		exit(0);
 	}
-	k = win(img, keycode);
-	makephototowin(img, k);
+	win(img, keycode);
+	makephototowin(img, img->pm);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:29:39 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/05 16:16:19 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/16 13:36:58 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,13 @@ int	showpng(t_data *img, int i, int z, int x)
 	{
 		mlx_put_image_to_window(img->mlx, img->win,
 			img->wall.img, i * 50, z * 50);
+	}
+	if (img->map.map[z][i] == 'Z' &&
+		(img->enemy1.locali == 0 || img->enemy1.localz == 0))
+	{
+		img->map.map[z][i] = '0';
+		img->enemy1.locali = i;
+		img->enemy1.localz = z;
 	}
 	if (img->map.map[z][i] == 'C')
 	{
@@ -86,6 +93,8 @@ int	showimage(t_data *img)
 	i = 0;
 	x = 0;
 	z = 0;
+	img->enemy1.locali = 0;
+	img->enemy1.localz = 0;
 	mlx_put_image_to_window(img->mlx, img->win, img->back.img, 0, 0);
 	while (z < img->map.xsize)
 	{

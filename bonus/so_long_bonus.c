@@ -6,42 +6,18 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:57:14 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/06 10:04:09 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:11:12 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	coin(t_data *img)
+void	enem(t_data *img)
 {
 	img->coin1.img = mlx_xpm_file_to_image(img->mlx, "xpm/coin1.xpm",
 			&img->coin1.img_width, &img->coin1.img_height);
-	img->coin2.img = mlx_xpm_file_to_image(img->mlx, "xpm/coin2.xpm",
-			&img->coin2.img_width, &img->coin2.img_height);
-	img->coin3.img = mlx_xpm_file_to_image(img->mlx, "xpm/coin3.xpm",
-			&img->coin3.img_width, &img->coin3.img_height);
-	img->coin4.img = mlx_xpm_file_to_image(img->mlx, "xpm/coin4.xpm",
-			&img->coin4.img_width, &img->coin4.img_height);
-	img->coin5.img = mlx_xpm_file_to_image(img->mlx, "xpm/coin5.xpm",
-			&img->coin5.img_width, &img->coin5.img_height);
-	img->coin6.img = mlx_xpm_file_to_image(img->mlx, "xpm/coin6.xpm",
-			&img->coin6.img_width, &img->coin6.img_height);
-}
-
-void	enem(t_data *img)
-{
 	img->enemy1.img = mlx_xpm_file_to_image(img->mlx, "xpm/enm1.xpm",
 			&img->enemy1.img_width, &img->enemy1.img_height);
-	img->enemy2.img = mlx_xpm_file_to_image(img->mlx, "xpm/enm2.xpm",
-			&img->enemy2.img_width, &img->enemy2.img_height);
-	img->enemy3.img = mlx_xpm_file_to_image(img->mlx, "xpm/enm3.xpm",
-			&img->enemy3.img_width, &img->enemy3.img_height);
-	img->enemy4.img = mlx_xpm_file_to_image(img->mlx, "xpm/enm4.xpm",
-			&img->enemy4.img_width, &img->enemy4.img_height);
-	img->enemy5.img = mlx_xpm_file_to_image(img->mlx, "xpm/enm5.xpm",
-			&img->enemy5.img_width, &img->enemy5.img_height);
-	img->enemy6.img = mlx_xpm_file_to_image(img->mlx, "xpm/enm6.xpm",
-			&img->enemy6.img_width, &img->enemy6.img_height);
 }
 
 void	put_image(t_data *img)
@@ -62,8 +38,8 @@ void	put_image(t_data *img)
 			&img->dorclose.img_width, &img->dorclose.img_height);
 	img->wallcoin.img = mlx_xpm_file_to_image(img->mlx, "xpm/wallllllco.xpm",
 			&img->wallcoin.img_width, &img->wallcoin.img_height);
+	protect(img);
 	enem(img);
-	coin(img);
 }
 
 int	main(int argc, char **argv)
@@ -81,6 +57,8 @@ int	main(int argc, char **argv)
 		img.img = mlx_new_image(img.mlx, img.map.linesize, img.map.xsize);
 		put_image(&img);
 		showimage(&img);
+		redanime(&img);
+		img.pm = 0;
 		img.wall.y = 2;
 		mlx_hook(img.win, 2, 1L << 0, key_hook, &img);
 		mlx_hook(img.win, 17, 1L << 0, ft_close, &img);

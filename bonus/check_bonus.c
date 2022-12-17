@@ -6,11 +6,40 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:58:20 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/05 18:58:51 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/16 17:33:56 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+char	*ft_strjoin_6(char *s1, char *s2)
+{
+	int		i;
+	char	*b;
+	int		j;
+
+	if (!s1 || !s2)
+		return (0);
+	b = malloc((ft_strlen(s1) + 1) + ft_strlen(s2));
+	if (!b)
+		return (0);
+	i = 0;
+	j = 0;
+	while (s1[i] != 0)
+	{
+		b[i] = s1[i];
+		i++;
+	}
+	while (s2[j] != 0)
+	{
+		b[i] = s2[j];
+		i++;
+		j++;
+	}
+	b[i] = '\0';
+	free(s1);
+	return (b);
+}
 
 int	replace(int z, int p, int i, char **map)
 {
@@ -95,14 +124,14 @@ void	find_c_e(char **map)
 	}
 }
 
-int	**check_bonus(void)
+void	check_bonus(char *argv)
 {
 	int		z;
 	int		fd;
 	char	**map;
 
-	map = malloc(10000000);
-	fd = open("map.ber", O_RDWR);
+	map = malloc(1000);
+	fd = open(argv, O_RDWR);
 	z = 0;
 	map[z] = get_next_line(fd);
 	while (map[z])
@@ -111,11 +140,10 @@ int	**check_bonus(void)
 		map[z] = get_next_line(fd);
 	}
 	path_finder(map);
-	map[z - 1] = ft_strjoin(map[z - 1], "\n\0");
+	map[z - 1] = ft_strjoin_6(map[z - 1], "\n\0");
 	find_c_e(map);
 	z = 0;
 	while (map[z])
 		free(map[z++]);
 	free(map);
-	return (0);
 }

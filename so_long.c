@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:55:37 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/06 10:01:40 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/16 16:16:41 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	put_image(t_data *img)
 			&img->dorclose.img_width, &img->dorclose.img_height);
 	img->wallcoin.img = mlx_xpm_file_to_image(img->mlx, "xpm/wallllllco.xpm",
 			&img->wallcoin.img_width, &img->wallcoin.img_height);
+	protect(img);
 }
 
 int	main(int argc, char **argv)
@@ -46,6 +47,7 @@ int	main(int argc, char **argv)
 				50 * img.map.xsize, "./so_long");
 		img.img = mlx_new_image(img.mlx, img.map.linesize, img.map.xsize);
 		put_image(&img);
+		img.pm = 0;
 		img.wall.y = 1;
 		showimage(&img);
 		mlx_hook(img.win, 2, 1L << 0, key_hook, &img);

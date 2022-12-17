@@ -1,0 +1,6 @@
+xpm/enm1.xpm
+xpm/enm2.xpm
+xpm/enm3.xpm
+xpm/enm4.xpm
+xpm/enm5.xpm
+xpm/enm6.xpm
