@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:31:21 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/06 10:02:33 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/16 17:49:07 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include <string.h>
-# include <mlx.h>
+# include "mlx/mlx.h"
 # include <stdarg.h>
-# include <stdio.h>
 # define COIN_ANIMATION 1
 # define ENEMY_ANIMATION 1
 
@@ -57,21 +55,13 @@ typedef struct s_data
 	int		endian;
 	void	*mlx;
 	void	*win;
+	int		pm;
 	t_map	map;
 	t_photo	mob;
 	t_photo	mob2;
 	t_photo	enemy1;
-	t_photo	enemy2;
-	t_photo	enemy3;
-	t_photo	enemy4;
-	t_photo	enemy5;
-	t_photo	enemy6;
 	t_photo	coin1;
 	t_photo	coin2;
-	t_photo	coin3;
-	t_photo	coin4;
-	t_photo	coin5;
-	t_photo	coin6;
 	t_photo	craves;
 	t_photo	back;
 	t_photo	coinback;
@@ -79,6 +69,9 @@ typedef struct s_data
 	t_photo	wallcoin;
 	t_photo	dor;
 	t_photo	dorclose;
+	t_photo	test;
+	t_map	redenm;
+	t_map	redcoin;
 }	t_data;
 
 int		ft_strlen(char *str);
@@ -87,17 +80,23 @@ int		showimage(t_data *img);
 char	*ft_strdup(char *str);
 char	**get_array(t_data *img, char *argv);
 char	*ft_itoa(int n);
-char	**check(void);
+void	check(char *argv);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_animation(t_data *img);
 int		key_hook(int keycode, t_data *img);
 void	mvplayer(t_data *img, int keycode);
-int		**check_bonus(void);
+void	check_bonus(char *argv);
 void	get_array_bonus(t_data *img, char *argv);
 int		ft_close(void);
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-
+char	*ft_strnstr(char *haystack, char *needle, size_t len);
+void	protect(t_data *img);
+void	animove(t_data *img);
+void	redanime(t_data *img);
+char	*ft_strtrim(char *s1, char *set);
+void	animove(t_data *img);
+void	whill(t_data *img);
+void	freedata(t_data *img);
 // get_next_line
 char	*get_next_line(int fd);
 

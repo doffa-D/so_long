@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_close.c                                         :+:      :+:    :+:   */
+/*   freesss.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 13:02:17 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/16 15:04:42 by hdagdagu         ###   ########.fr       */
+/*   Created: 2022/12/16 14:41:14 by hdagdagu          #+#    #+#             */
+/*   Updated: 2022/12/16 15:21:44 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_close(void)
+void	freedata(t_data *img)
 {
+	free(img->map.map);
+	free(img->redcoin.map);
 	exit(0);
 }

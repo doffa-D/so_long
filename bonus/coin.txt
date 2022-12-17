@@ -1,0 +1,6 @@
+xpm/coin1.xpm
+xpm/coin2.xpm
+xpm/coin3.xpm
+xpm/coin4.xpm
+xpm/coin5.xpm
+xpm/coin6.xpm

@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:11:45 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/06 10:02:45 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/12/16 13:36:12 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (b);
 }
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(char *haystack, char *needle, size_t len)
 {
 	size_t	h;
 	size_t	n;
