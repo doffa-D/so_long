@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:31:21 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/12/16 17:49:07 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2023/04/29 20:05:59 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "mlx/mlx.h"
+# include <mlx.h>
 # include <stdarg.h>
 # define COIN_ANIMATION 1
 # define ENEMY_ANIMATION 1
