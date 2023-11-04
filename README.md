@@ -10,7 +10,6 @@
 /*   Updated: 2022/11/22 15:21:06 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 ```
 # so_long
 
@@ -22,13 +21,13 @@
 # Description
 This project is a very small 2D game. It is built to make you work with textures, sprites. And some very basic gameplay elements.
 
-## How play the game
-To play this game you can use any map of your choice as long follow the following rues:
+## How to Play the Game
+To play this game, you can use any map of your choice as long as it follows the following rules:
 
-* The extension need be `.ber`
-* Its must be rectangular, surrounded by wall `1`
-* Must have only one exit, only one player and at least one collectible
-* Characters allowed:
+* The extension must be `.ber`
+* It must be rectangular, surrounded by walls `1`
+* It must have only one exit, one player, and at least one collectible
+* The following characters are allowed:
 
 |  Character  |          Object          |
 |:-----------:|:------------------------:|
@@ -40,7 +39,7 @@ To play this game you can use any map of your choice as long follow the followin
 |     *Z*     | Enemy starting position  |
 
 
-# Example if you die
+# Example of Death in the Game
 
 ![dead](https://user-images.githubusercontent.com/54211553/203583384-f59673dd-bb5d-44db-897b-4047d1d9f847.gif)
 
@@ -52,31 +51,30 @@ Or with bonuses:
 
 ``make bonus``
 
-to start the game:
+To start the game:
 
 ``./so_long``
 
-# Commandes :
+# Commands:
 
-| Clave | Action |
+| Key | Action |
 |---|---|
 | <kbd>W</kbd>| Jump |
 | <kbd>S</kbd>| Move down |
 | <kbd>A</kbd>| Move left |
 | <kbd>D</kbd>| Move right |
-| <kbd>ESC</kbd>| close the game |
+| <kbd>ESC</kbd>| Close the game |
 ---
 
 ### Map File
-You can create your own map file as you like but need to follow these rules.
-- map is covered with walls
-- map is contained with 1 item, 1 player and 1 exit door.
+You can create your own map file as you like but it needs to follow these rules:
+- The map is covered with walls
+- The map contains 1 item, 1 player, and 1 exit door
 - The map must be rectangular
-- map file name need end with `.ber`
-- place map file in `maps` directory
+- The map file name needs to end with `.ber`
+- Place the map file in the `maps` directory
 
-# Exemple for map:
-
+# Example of a Map:
 ```
 111111111111111111
 10100C00010000C0C1
@@ -94,5 +92,4 @@ You can create your own map file as you like but need to follow these rules.
 
 [MiniLibX]: https://github.com/42Paris/minilibx-linux
 [MiniLibX Document]: https://harm-smits.github.io/42docs/libs/minilibx/introduction.html
-[MiniLibX Tutorial]: https://aurelienbrabant.fr/blog/pixel-drawing-with-the-minilibx
-[MiniLibX Example]: https://github.com/terry-yes/mlx_example
+[MiniLibX Tutorial]: https://aurelienbrabant.fr/blog/pixel-d
